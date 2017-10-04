@@ -8,7 +8,6 @@ function guidGenerator() {
     return S4() + S4() + '-' + S4() + '-' + S4() + '-' + S4() + '-' + S4() + S4() + S4();
 }
 
-
 export default class Todo {
     constructor(descriptionText, isDone, id) {
         this.descriptionText = descriptionText || '';
