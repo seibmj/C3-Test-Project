@@ -14,5 +14,6 @@ export default class Todo {
             this.isDone = isDone || false;
             this.id = id || guidGenerator();
         }
-        ///Testing
+        ///Testing 2.0
+
 }
