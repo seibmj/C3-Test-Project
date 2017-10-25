@@ -1,8 +1,6 @@
 import React from 'react';
 import VisibleTodoList from './VisibleTodoList';
-///Github Change
-
-
+//Github Change
 export default class TodoApp extends React.Component {
     constructor(props) {
         super(props);
@@ -16,23 +14,31 @@ export default class TodoApp extends React.Component {
     addTodo = () => {
         if (this._todoInputField.value) {
             this.props.dataInterface.addTodo(this._todoInputField.value);
-            this.setState({ todos: this.props.dataInterface.getAllTodos() });
+            this.setState({
+                todos: this.props.dataInterface.getAllTodos()
+            });
             this._todoInputField.value = '';
         }
     }
 
     archiveToggleTodo = e => {
         this.props.dataInterface.archiveToggleTodo(e.target.dataset.id);
-        this.setState({ todos: this.props.dataInterface.getAllTodos() });
+        this.setState({
+            todos: this.props.dataInterface.getAllTodos()
+        });
     }
 
     removeTodo = e => {
         this.props.dataInterface.removeTodo(e.target.dataset.id);
-        this.setState({ todos: this.props.dataInterface.getAllTodos() });
+        this.setState({
+            todos: this.props.dataInterface.getAllTodos()
+        });
     }
 
     changeVisibilityFilter = e => {
-        this.setState({ visibilityFilter: e.target.dataset.id });
+        this.setState({
+            visibilityFilter: e.target.dataset.id
+        });
     }
 
     visibleTodos = () => {
@@ -56,28 +62,52 @@ export default class TodoApp extends React.Component {
             div >
             <
             h2 > Down and Dirty TodoApp built with React < /h2> <
-            input onKeyPress = { this.addTodo }
+            input onKeyPress = {
+                this.addTodo
+            }
             type = "text"
             placeholder = "What do you want todo?"
             ref = {
-                (c => this._todoInputField = c) }
+                (c => this._todoInputField = c)
+            }
             /> <
             button style = {
-                { color: "red" } }
-            onClick = { this.addTodo } > Add Todo < /button> <
-            VisibleTodoList visibleTodos = { visibleTodos }
-            visibilityFilter = { this.state.visibilityFilter }
-            archiveToggleTodo = { this.archiveToggleTodo }
-            removeTodo = { this.removeTodo }
+                {
+                    color: "red"
+                }
+            }
+            onClick = {
+                this.addTodo
+            } > Add Todo < /button> <
+            VisibleTodoList visibleTodos = {
+                visibleTodos
+            }
+            visibilityFilter = {
+                this.state.visibilityFilter
+            }
+            archiveToggleTodo = {
+                this.archiveToggleTodo
+            }
+            removeTodo = {
+                this.removeTodo
+            }
             /> <
             div >
             SHOW: {
                 this.visibilityFilters.map(
                     visibilityFilter =>
                     <
-                    button key = { visibilityFilter }
-                    onClick = { this.changeVisibilityFilter }
-                    data - id = { visibilityFilter } > { visibilityFilter.replace("_", " ") } <
+                    button key = {
+                        visibilityFilter
+                    }
+                    onClick = {
+                        this.changeVisibilityFilter
+                    }
+                    data - id = {
+                        visibilityFilter
+                    } > {
+                        visibilityFilter.replace("_", " ")
+                    } <
                     /button>
                 )
             } <
