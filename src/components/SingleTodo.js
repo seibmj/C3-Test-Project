@@ -1,5 +1,7 @@
 import React from 'react';
 //Test VSTS
+
+// Test from branch
 export default class SingleTodo extends React.Component {
     render() {
         return ( <
@@ -15,8 +17,8 @@ export default class SingleTodo extends React.Component {
             button data - id = { this.props.todoId }
             onClick = { this.props.removeTodo } >
             Remove <
-            /button> <
-            /li>
+            /button> < /
+            li >
         );
     }
 }
