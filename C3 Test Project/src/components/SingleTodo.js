@@ -1,5 +1,6 @@
 import React from 'react';
 //Test
+//Test VSTS 2
 export default class SingleTodo extends React.Component {
     render() {
         return ( <
@@ -13,8 +14,8 @@ export default class SingleTodo extends React.Component {
             label > { this.props.text } { this.props.isDone ? " - DONE" : "" } < /label> <
             button data - id = { this.props.todoId }
             onClick = { this.props.removeTodo } >
-            Remove < /button>  <
-            /li>
+            Remove < /button>  < /
+            li >
         );
     }
 }
